@@ -16,17 +16,44 @@ def index():
     '''
     pitch = Pitch.query.filter_by().first()
     title = 'Home'
-    pickuplines = Pitch.query.filter_by(category="pickuplines")
+    businesspitch= Pitch.query.filter_by(category="businesspitch")
     interviewpitch = Pitch.query.filter_by(category="interviewpitch")
-    promotionpitch = Pitch.query.filter_by(category="promotionpitch")
-    productpitch = Pitch.query.filter_by(category="productpitch")
+    techpitch = Pitch.query.filter_by(category="techpitch")
+    pickuppitch = Pitch.query.filter_by(category="pickuppitch")
 
     upvotes = Upvote.get_all_upvotes(pitch_id=Pitch.id)
 
-    return render_template('home.html', title=title, pitch=pitch, pickuplines=pickuplines,
-                           interviewpitch=interviewpitch, promotionpitch=promotionpitch, productpitch=productpitch,
+    return render_template('index.html', title=title, pitch=pitch, pickuppitch=pickuppitch,
+                           interviewpitch=interviewpitch, businesspitch=businesspitch, techpitch=techpitch,
                            upvotes=upvotes)
 
+
+
+@main.route('/pickup', methods=['GET', 'POST'])
+def pickup():
+    pitch = Pitch.query.filter_by().first()
+    pickuppitch = Pitch.query.filter_by(category="pickuppitch")
+    return render_template('pick-up.html', pitch=pitch, pickuppitch=pickuppitch)
+
+@main.route('/business', methods=['GET', 'POST'])
+def business():
+    pitch = Pitch.query.filter_by().first()
+    businesspitch= Pitch.query.filter_by(category="businesspitch")
+
+    return render_template('business.html', businesspitch=businesspitch, pitch=pitch)
+
+@main.route('/interview', methods=['GET', 'POST'])
+def interview():
+    pitch = Pitch.query.filter_by().first()
+    interviewpitch = Pitch.query.filter_by(category="interviewpitch")
+
+    return render_template('interview.html', pitch=pitch, interviewpitch=interviewpitch)
+
+@main.route('/technology', methods=['GET', 'POST'])
+def technology():
+    techpitch = Pitch.query.filter_by(category="techpitch")
+    pitch = Pitch.query.filter_by().first()
+    return render_template('technology.html', pitch=pitch, techpitch=techpitch)
 
 @main.route('/pitches/new/', methods=['GET', 'POST'])
 @login_required
@@ -99,7 +126,6 @@ def downvote(pitch_id):
     new_downvote = Downvote(pitch_id=pitch_id, user=current_user)
     new_downvote.save_downvotes()
     return redirect(url_for('main.index'))
-
 
 
 
