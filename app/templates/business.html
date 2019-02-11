@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
-<!--{% import 'macros.html' as macro%}-->
-
-
-<!-- Styles block -->
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
 
 {% block styles%}
     {{ super() }}
@@ -14,17 +14,18 @@
 <!-- Content block -->
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-      <div class= "col-md-4">
+      <div class= "col-md-6">
         <div class="shape">
 
 
-        <img src="images/create.jpg" alt="login image">
+        <img src="/static/images/create.jpg" alt="login image">
 
 </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
+           {{ macro.display(businesspitch) }}
      </div>
     </div>
 </div>
