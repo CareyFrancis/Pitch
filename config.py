@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wairimu:touce@localhost/watchlist'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wairimu:touce@localhost/pitch'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProdConfig(Config):

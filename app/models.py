@@ -41,6 +41,7 @@ class Pitch(db.Model):
         """
         return Pitch.query.filter_by(category_id = cat_id)
 
+
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
 
