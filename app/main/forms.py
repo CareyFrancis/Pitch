@@ -1,10 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField,BooleanField,SubmitField,TextAreaField,RadioField
+from wtforms import StringField,SubmitField,BooleanField,SubmitField,TextAreaField,RadioField, SelectField
 from wtforms.validators import Required,Email,EqualTo
 from wtforms import ValidationError
 
 class PitchForm(FlaskForm):
-	title = StringField('Title', validators=[Required()])
-	description = TextAreaField("What would you like to pitch ?",validators=[Required()])
-	category = RadioField('Label', choices=[ ('promotionpitch','promotionpitch'), ('interviewpitch','interviewpitch'),('pickuplines','pickuplines'),('productpitch','productpitch')],validators=[Required()])
-	submit = SubmitField('Submit')
+    category_id = SelectField('Select category', choices=[('1', 'Pick Up Lines'), ('2', 'Technology'), ('3', 'Business'),('4','Interview')])
+    title = StringField('Title of your Pitch')
+    content = TextAreaField('')
+    submit = SubmitField('Add Pitch')
