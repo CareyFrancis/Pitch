@@ -1,3 +1,4 @@
+<body>
 {% extends 'bootstrap/base.html' %}
 {% import 'macros.html' as macro %}
 {% block navbar %}
@@ -16,14 +17,12 @@
 
 <div class="container">
     <div class="row">
+        <h2>Business Pitch</h2>
       <div class= "col-md-6">
-        <div class="shape">
 
 
         <img src="/static/images/create.jpg" alt="login image">
-
-</div>
-      </div>
+    </div>
       <div class="col-md-6">
            {{ macro.display(businesspitch) }}
      </div>
@@ -32,3 +31,4 @@
 
 
 {% endblock%}
+</body>
