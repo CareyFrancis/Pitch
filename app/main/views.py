@@ -26,7 +26,7 @@ def index():
                            upvotes=upvotes)
 
 
-@main.route('/pitches/new/', methods=['GET', 'POST'])
+@main.route('/pitches/new/<int:id>', methods=['GET', 'POST'])
 @login_required
 def new_pitch():
     form = PitchForm()
@@ -34,7 +34,7 @@ def new_pitch():
     if form.validate_on_submit():
         description = form.description.data
         title = form.title.data
-        owner_id = current_user
+        # owner_id = current_user
         category = form.category.data
         print(current_user._get_current_object().id)
         new_pitch = Pitch(owner_id=current_user._get_current_object().id, title=title, description=description,
