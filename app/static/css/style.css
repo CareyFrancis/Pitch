@@ -1,23 +1,5 @@
 img{
-  width: auto;
+  width: 100%;
   height: 100vh;
-  overflow:hidden;
-  position: absolute;
-}
-.shape {
-    background: linear-gradient(#4ACBBD, #4ACBBD) repeat scroll 0 0;
-    height: 100vh;
-    width: 300px;
-    position: relative;
-}
-.shape:after {
-    border-bottom:  250px solid #4ACBBD;
-    border-top: 250px solid #4ACBBD;
-    border-right: 100px solid transparent;
-    right: -415px;
-    bottom: 1px;
-    height: 100vh;
-    content: "";
-    position: absolute;
-
+  overflow-y:hidden;
 }
