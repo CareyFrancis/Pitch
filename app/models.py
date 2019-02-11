@@ -15,24 +15,24 @@ class Pitch:
     '''
     __tablename__ = 'pitches'
 
-#     id = db.Column(db.Integer, primary_key=True)
-#     description = db.Column(db.String(), index=True)
-#     title = db.Column(db.String())
-#     category = db.Column(db.String(255), nullable=False)
-#     comments = db.relationship('Comment', backref='pitch', lazy='dynamic')
-#     upvotes = db.relationship('Upvote', backref='pitch', lazy='dynamic')
-#     downvotes = db.relationship('Downvote', backref='pitch', lazy='dynamic')
-#
-#     @classmethod
-#     def get_pitches(cls, id):
-#         pitches = Pitch.query.order_by(pitch_id=id).desc().all()
-#         return pitches
-#
-#     def __repr__(self):
-#         return f'Pitch {self.description}'
-#
-#
+    id = db.Column(db.Integer, primary_key=True)
+    pitch = db.Column(db.String(255))
+    category_id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
 
+    def save_pitch(self):
+        """
+        Function to save pitches
+        """
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_pitches(cls):
+        """
+        Function that quries database and returns all pitches
+        """
+        return  Pitch.query
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
