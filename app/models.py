@@ -16,7 +16,6 @@ class Pitch:
     __tablename__ = 'pitches'
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     description = db.Column(db.String(), index=True)
     title = db.Column(db.String())
     category = db.Column(db.String(255), nullable=False)
