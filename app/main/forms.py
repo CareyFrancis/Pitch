@@ -4,7 +4,18 @@ from wtforms.validators import Required,Email,EqualTo
 from wtforms import ValidationError
 
 class PitchForm(FlaskForm):
-    category_id = SelectField('Select category', choices=[('1', 'Pick Up Lines'), ('2', 'Technology'), ('3', 'Business'),('4','Interview')])
+    category = SelectField('Select category', choices=[('pickuppitch', 'Pick Up Lines'), ('techpitch', 'Technology'), ('businesspitch', 'Business'),('interviewpitch','Interview')])
     title = StringField('Title of your Pitch')
-    content = TextAreaField('')
+    description = TextAreaField('Type in your pitch')
     submit = SubmitField('Add Pitch')
+
+class CommentForm(FlaskForm):
+    description = TextAreaField('Add comment',validators=[Required()])
+    submit = SubmitField()
+
+class UpvoteForm(FlaskForm):
+    submit = SubmitField()
+
+
+class Downvote(FlaskForm):
+    submit = SubmitField()
