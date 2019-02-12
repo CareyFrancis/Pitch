@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Pitch
+Hey welcome to our application. Have fun practising your pitches here. Have fun
