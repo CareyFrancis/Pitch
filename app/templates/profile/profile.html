@@ -11,9 +11,17 @@
 
 {% block content %}
 <div class="container">
+    <h2>Profile Info</h2>
 <div class="row">
 <!-- displaying  Username-->
   <div class="col-md-4">
+              <img class="full" src="/static/images/profile.png" alt="login image">
+
+  </div>
+
+  <!--Display profile photo-->
+  <div class="col-md-8">
+
        <h3> {{user.username| capitalize}} </h3>
 
     <!--Displaying user bio-->
@@ -42,10 +50,6 @@
       <input type="submit">
     </form>
       {% endif %}
-  </div>
-
-  <!--Display profile photo-->
-  <div class="col-md-8">
     {{ macro.display(pickuppitch)}}
 
   </div>

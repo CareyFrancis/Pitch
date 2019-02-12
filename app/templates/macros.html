@@ -11,8 +11,8 @@
 					<footer class="blockquote-footer"> Posted by {{category.user.username}}</footer>
 				</blockquote></div>
                 <div class="panel-footer"><a href="{{url_for('main.new_comment',pitch_id = category.id)}}"> Add a comment</a>
-				<a href="{{url_for('main.upvote',pitch_id = category.id)}}"><i></i>Upvote <span>{{category.upvotes.count()}}</span></a>
-				<a href="{{url_for('main.downvote',pitch_id = category.id)}}"><i class="far fa-thumbs-up"></i>Downvote <span>{{category.downvotes.count()}}</span></a>
+				<a href="{{url_for('main.upvote',pitch_id = category.id)}}"><i class="fas fa-heart"></i>Upvote<span>{{category.upvotes.count()}}</span></a>
+				<a href="{{url_for('main.downvote',pitch_id = category.id)}}"><i class="fal fa-heartbeat"></i>Downvote<span>{{category.downvotes.count()}}</span></a>
 
 </div>
     </div>
@@ -38,7 +38,7 @@
 			{% endfor %}
 			{% else %}
 
-			<h3>This post does  not does not have any comments yet !</h3>
+			<h3>No comments</h3>
 			{%endif%}
 
 	</ul>

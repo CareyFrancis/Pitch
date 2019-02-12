@@ -16,14 +16,14 @@ login_manager.login_view = 'auth.login'
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
-simple = SimpleMDE()
-mail = Mail()
+# simple = SimpleMDE()
+# mail = Mail()
 photos = UploadSet('photos',IMAGES)
 def create_app(config_name):
 
     app = Flask(__name__)
-    simple.init_app(app)
-    mail.init_app(app)
+    # simple.init_app(app)
+    # mail.init_app(app)
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
