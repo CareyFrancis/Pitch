@@ -4,11 +4,20 @@
 {% include 'navbar.html'%}
 
 
-
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+{% endblock %}
 
 {% block content %}
 <div class="container">
 	<div class="row">
+		<div class="col-md-6">
+			        <img src="/static/images/create.jpg" alt="login image">
+
+		</div>
+		<div class="col-md-6">
+
 		<div class="jumbotron">
 				{{wtf.quick_form(form)}}
 		<ul style="list-style: none;">
@@ -25,6 +34,7 @@
 				{% endfor %}
 		</ul>
 		</div>
+			</div>
 	</div>
 </div>
 

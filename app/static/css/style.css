@@ -3,3 +3,13 @@ img{
   height: 100vh;
   overflow-y:hidden;
 }
+body{
+    min-height: 100%;
+
+}
+#cat{
+    border: 2px;
+    border radius: 5px;
+    width: 80%;
+    list-style-type: none;
+}
