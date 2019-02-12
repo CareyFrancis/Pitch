@@ -18,8 +18,8 @@ Pitch is a web application that users can pitch ideas, comment and vote on other
 
 ## Setup/Installation Requirements
 Follow the following commands to run the project
-* git clone/download https://github.com/nimomaina/pitch.git
-* cd pitch
+* git clone/download ```https://github.com/nimomaina/Pitch.git```
+* cd Pitch
 * Edit the start.sh file with your api key from the news.org website
 * Install python 3.6
 * Run ```chmod a+x start.py```
